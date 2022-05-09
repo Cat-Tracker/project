@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Cat Tracker 9000</title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+	<script src="index.js"></script>
+</head>
+
+<body>
+	<div id="map_canvas"></div>
+
+	<section id="data">
+		<section id="controls">
+			<div>
+				<b>Filter by time:</b>
+				<select name="time_filter" id="time_filter" onchange="Filters.updateTime(event)">
+					<option value="ALL_TIME">all time</option>
+					<option value="LAST_YEAR">last 365 days</option>
+					<option value="LAST_MONTH">last 30 days</option>
+					<option value="LAST_WEEK">last 7 days</option>
+					<option value="LAST_DAY">last 24 hours</option>
+				</select>
+			</div>
+
+			<br/>
+
+			<div>
+				<input type="checkbox" onchange="Filters.toggleRegion()">
+				<b>Enable proximity filtering?</b>
+			</div>
+
+			<br/>
+
+			<div>
+				<span id="display_counter_container">
+					<span id="display_counter">0</span> results visible
+				</span><button id="download_button" onclick="download()">Download</button>
+			</div>
+		</section>
+
+		<table id="results_table">
+			<tr>
+				<th>Id</th>
+				<th>Timestamp</th>
+				<th>Type</th>
+				<th># of cats</th>
+				<th>Walking?</th>
+				<th>Running?</th>
+				<th>Resting?</th>
+				<th>Chasing?</th>
+				<th>Bird in mouth?</th>
+				<th>Small mammal in mouth?</th>
+				<th>Clipped ear?</th>
+				<th>Notes</th>
+			</tr>
+		</table>
+	</section>
+
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiJPcuEyMy1cfZSsYCn0tHkjoxuauYGtU&callback=initMap" defer
+		async></script>
+</body>
+
+</html>
