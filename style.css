@@ -1,0 +1,131 @@
+/* https://fonts.google.com/specimen/Open+Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap');
+
+body {
+	margin: 0;
+	padding: 0;
+  font-family: 'Open Sans', sans-serif;  
+}
+
+#map_canvas {
+	height: 50vh;
+	width: 100%;
+}
+
+#data {
+  /* make two columns with a gap in between */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5em;
+  padding: 1em 2em;
+}
+
+#data > * {
+  /* the columns should only be as wide as their content */
+  flex: content;
+}
+
+#controls {
+  /* stop stuff from going to the next line */
+  white-space: nowrap;
+}
+
+#controls > * {
+  /* add spaces between each control */
+  margin-top: 1em;
+}
+
+#time_filter {
+  font-size: 16px;
+}
+
+input[type=checkbox] {
+  /* make the checkbox bigger */
+  transform: scale(1.5);
+}
+
+#display_counter_container {
+  /* nice blue from https://clrs.cc/ */
+  border: 2px solid #0074D9;
+  background-color: #0074D9;
+  color: white;
+  font-size: 14px;
+  padding: 0.5em;
+  
+  /* make the left side rounded */
+  border-radius: 6px 0 0 6px;
+}
+
+#download_button {
+  padding: 0.5em;
+  border: 2px solid #0074D9;
+  background-color: white;
+  color: #0074D9;
+  font-size: 14px;
+  transition-duration: 0.5s;
+  /* make the button font extra bold */
+  font-weight: 800;
+  /* make the right side rounded*/
+  border-radius: 0 6px 6px 0;
+  /* makes your mouse a finger on hover */
+  cursor: pointer;
+}
+
+/* changes the download button color on hover */
+#download_button:hover {
+  background-color: #0074D9;
+  color: white;
+}
+
+/* makes logo smaller */
+img {
+  height: 80px;
+  width: 235px;
+  align-content: center;
+}
+
+#results_table {
+  font-size: 12px;
+  text-align: left;
+  /* get rid of the borders between columns */
+  border-collapse: collapse;
+}
+
+th {
+  font-size: 14px;
+  /* add a lin4 under the table header */
+  border-bottom: 1px solid black;
+  /* make the font thinner */
+  font-weight: 300;
+}
+
+td, th {
+  padding: 0.5em;
+  /* stop the columns from going to next line */
+  white-space: nowrap;
+}
+
+/* center the ticks and crosses */
+td:nth-child(4),
+td:nth-child(5), 
+td:nth-child(6), 
+td:nth-child(7), 
+td:nth-child(8), 
+td:nth-child(9), 
+td:nth-child(10), 
+td:nth-child(11) {
+  text-align: center;
+}
+
+/* let the last column (notes) wrap if too long */
+td:last-child {
+  white-space: normal;
+}
+
+/* make the table striped */
+/* https://www.w3schools.com/css/tryit.asp?filename=trycss_table_striped */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
