@@ -1,5 +1,5 @@
 // times in milliseconds
-var DAY = 1000 * 60 * 60 * 24
+let DAY = 1000 * 60 * 60 * 24
 var WEEK = DAY * 7
 var MONTH = DAY * 30
 
